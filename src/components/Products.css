@@ -1,0 +1,99 @@
+
+.products-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap:0;
+  }
+  
+  .section-title {
+    font-family: 'Urbanist' ;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: #49614F;
+  }
+  
+  .section-subtitle {
+    font-family: 'Special Elite', serif;
+    font-size: 52px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #000;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .product-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-image {
+    height: 120px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #49614F;
+    text-align: center;
+  }
+  
+  .product-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  @media (max-width: 768px) {
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .product-card {
+      padding: 1.5rem;
+    }
+  
+    .product-image {
+      height: 100px;
+    }
+  }

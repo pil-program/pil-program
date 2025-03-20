@@ -1,0 +1,203 @@
+/* Container */
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 992px) {
+  .about-us-container {
+    /* Three columns on larger screens */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Common Image Styling */
+.image-container {
+  width: 300px;
+  height: 378px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Column Wrappers */
+.couple-column,
+.stats-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 25px;
+}
+.aboutus-columns {
+  max-height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap:30px;
+}
+
+/* =========================
+   Left Column: Happy Couple
+   ========================= */
+.customers-section {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap:0; /* Forces "Happy Customers" to the bottom if desired */
+}
+
+.customers-title {
+  font-size: 16px;
+  font-weight: semibold;
+  color: #4b4b4b;
+  margin-bottom: 10px;
+  font-family: 'POPPINS', sans-serif;
+}
+
+.divider {
+  height: 8px;
+  width: 96px;
+  background-color: #eee;
+  margin-bottom: 16px;
+}
+.divider2 {
+  height: 8px;
+  width: 120px;
+  background-color: #eee;
+  margin-bottom: 16px;
+}
+
+.emoji-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: top ;
+  flex-direction: row;
+}
+
+.emoji {
+  font-size: 24px;
+}
+.emoji-large {
+  font-size: 30px;
+}
+
+/* =========================
+   Middle Column: Stats
+   ========================= */
+.stats-section {
+  text-align: left;
+}
+
+.stats-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.aboutus-header{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.stats-number {
+  font-size: 26px;
+  font-family: 'poppins', sans-serif;
+  font-weight: bold;
+  color: #49614f;
+  margin: 0;
+}
+
+.arrow-icon {
+  height: 24px;
+  width: 24px;
+  color: #4ade80;
+}
+
+.stats-description {
+  color: #666;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* =========================
+   Right Column: About Us
+   ========================= */
+
+
+.subtitle {
+  font-family: 'Urbanist' ;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 0px;
+  color: #49614F;
+}
+
+.main-title {
+  font-family: 'Special Elite', serif;
+  font-size: 52px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 0rem;
+  color: #000;
+}
+
+.description-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 500px;
+}
+
+.learn-more-button {
+  width: 200px;              /* Fixed width for the button */
+  background-color: #4a6852;    /* Green-ish color */
+  color: #fff;                  /* White text */
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  
+  /* Padding + shape */
+  padding: 16px 40px;
+  border-radius: 8px 8px 8px 8px;   /* Round only the left corners */
+  
+  /* Skew the entire button to get a diagonal right side */
+  transform: skewX(-15deg);
+  transform-origin: center left; /* So the left side remains fairly stable */
+  
+  /* Optional: box-shadow to mimic the screenshot’s subtle depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Transition for hover effect */
+  transition: background-color 0.3s;
+}
+
+/* Un-skew the text so it’s not slanted */
+.learn-more-button span {
+  display: inline-block;
+  transform: skewX(15deg);  /* Opposite of the parent */
+  transform-origin: center left;
+}
+
+/* Hover state */
+.learn-more-button:hover {
+  background-color: #3a5742;
+}
+

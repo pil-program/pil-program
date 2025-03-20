@@ -1,0 +1,8 @@
+/* src/App.css */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add styles specific to your App component layout here */

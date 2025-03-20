@@ -1,0 +1,183 @@
+/* Hero.css */
+.hero-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+
+      /* Enhanced Background Styles */
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url('../assets/background.png') center/cover no-repeat;
+
+    /* Add smooth transition for background */
+    transition: background-image 0.3s ease;
+    color: white;
+    position: relative;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+    max-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .logo {
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.40em;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    padding-right: 1rem;
+  }
+  
+  
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+    color: black;
+  }
+  
+  .nav-links a:hover {
+    transform: translateY(-2px);
+    color: #ddd;
+  }
+/* Container: Center the headings */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+
+}
+
+/* Base styles for your headings */
+.journey {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.simplified {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #f0f0f0;
+  margin: 0;
+  font-family: 'Special Elite', cursive;
+  letter-spacing: 15px;
+}
+
+
+.typewriter-1,
+.typewriter-2 {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* "JOURNEY" */
+.typewriter-1 {
+  /* 7 letters => steps(7, end). 3s total. 
+     'animation-fill-mode: backwards' ensures it starts hidden at width:0 */
+  animation: typingJourney 1s steps(3, end) forwards;
+  animation-fill-mode: backwards;
+}
+
+@keyframes typingJourney {
+  0% {
+    width: 0;
+    /* Show a right border (cursor) only while typing */
+    border-right: 3px solid #fff;
+  }
+  99% {
+    width: 16ch; /* Enough to display "JOURNEY" fully with letter-spacing */
+    border-right: 3px solid #fff;
+  }
+  100% {
+    width: 16ch;
+    /* Remove the border completely at the end */
+    border: none;
+  }
+}
+
+/* "SIMPLIFIED" */
+.typewriter-2 {
+  /* 10 letters => steps(10, end). 3s total. Delay 3s to start after "JOURNEY" */
+  animation: typingSimplified 1s steps(4, end) forwards 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes typingSimplified {
+  0% {
+    width: 0;
+    border-right: 3px solid #fff;
+  }
+  99% {
+    width: 20ch; /* Enough to display "SIMPLIFIED" fully with letter-spacing */
+    border-right: 3px solid #fff;
+  }
+  100% {
+    width: 20ch;
+    border: none;
+  }
+}
+
+
+
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      padding: 1rem 0;
+    }
+    
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+    }
+  
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-right: 0;
+    }
+  
+    .journey {
+      font-size: 2.5rem;
+    }
+  
+    .simplified {
+      font-size: 2rem;
+    }
+  }
