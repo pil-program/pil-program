@@ -1,71 +1,132 @@
-/* Hero.css */
 .hero-container {
-    min-height: 100vh;
-    width: 100%;
-    padding: 2rem 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-
-      /* Enhanced Background Styles */
-    background: 
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background: 
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     url('../assets/background.png') center/cover no-repeat;
+  transition: background-image 0.3s ease;
+  color: white;
+  position: relative;
+}
 
-    /* Add smooth transition for background */
-    transition: background-image 0.3s ease;
-    color: white;
-    position: relative;
-  }
-  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding: 0 2rem;
+  max-width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Logo remains left aligned */
+.logo {
+  font-family: 'montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.40em;
+  font-weight: 600;
+  color: black;
+}
+
+/* Desktop navigation links */
+.nav-links.desktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links.desktop a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  color: black;
+}
+
+.nav-links.desktop a:hover {
+  transform: translateY(-2px);
+  color: #ddd;
+}
+
+/* Hamburger Menu Icon - hidden on desktop */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+/* Mobile Overlay Menu */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
-    padding: 0 2rem;
-    max-width: 100%;
-    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    padding: 0 1rem;
   }
-  
-  .logo {
-    font-family: 'montserrat', sans-serif;
-    text-transform: uppercase;
+
+  /* Show hamburger icon on mobile */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide desktop nav-links on mobile */
+  .nav-links.desktop {
+    display: none;
+  }
+
+  /* Mobile overlay menu styles */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    background: white;
+    padding-top: 3rem;
+    transition: right 0.3s ease;
+    z-index: 100;
+  }
+
+  /* When open, slide in the overlay */
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  .mobile-menu a {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    letter-spacing: 0.40em;
-    font-weight: 600;
     color: black;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    padding-right: 1rem;
-  }
-  
-  
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  
-  .nav-links a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: white;
     text-decoration: none;
-    transition: all 0.3s ease;
-    letter-spacing: 0.05em;
+    margin: 1rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-menu a:hover {
+    color: #555;
+  }
+
+  /* Close icon styling */
+  .close-icon {
+    align-self: flex-end;
+    font-size: 2rem;
+    margin: 0 1rem 2rem 0;
+    cursor: pointer;
     color: black;
   }
-  
-  .nav-links a:hover {
-    transform: translateY(-2px);
-    color: #ddd;
-  }
-/* Container: Center the headings */
+}
+
+/* Existing styles for content and typewriter animations remain unchanged */
 .content {
   display: flex;
   flex-direction: column;
@@ -74,10 +135,8 @@
   width: 100%;
   padding-top: 100px;
   text-align: center;
-
 }
 
-/* Base styles for your headings */
 .journey {
   font-size: 3rem;
   font-weight: 400;
@@ -97,7 +156,6 @@
   letter-spacing: 15px;
 }
 
-
 .typewriter-1,
 .typewriter-2 {
   white-space: nowrap;
@@ -105,10 +163,7 @@
   box-sizing: border-box;
 }
 
-/* "JOURNEY" */
 .typewriter-1 {
-  /* 7 letters => steps(7, end). 3s total. 
-     'animation-fill-mode: backwards' ensures it starts hidden at width:0 */
   animation: typingJourney 1s steps(3, end) forwards;
   animation-fill-mode: backwards;
 }
@@ -116,23 +171,19 @@
 @keyframes typingJourney {
   0% {
     width: 0;
-    /* Show a right border (cursor) only while typing */
     border-right: 3px solid #fff;
   }
   99% {
-    width: 16ch; /* Enough to display "JOURNEY" fully with letter-spacing */
+    width: 16ch;
     border-right: 3px solid #fff;
   }
   100% {
     width: 16ch;
-    /* Remove the border completely at the end */
     border: none;
   }
 }
 
-/* "SIMPLIFIED" */
 .typewriter-2 {
-  /* 10 letters => steps(10, end). 3s total. Delay 3s to start after "JOURNEY" */
   animation: typingSimplified 1s steps(4, end) forwards 1s;
   animation-fill-mode: backwards;
 }
@@ -143,7 +194,7 @@
     border-right: 3px solid #fff;
   }
   99% {
-    width: 20ch; /* Enough to display "SIMPLIFIED" fully with letter-spacing */
+    width: 20ch;
     border-right: 3px solid #fff;
   }
   100% {
@@ -152,32 +203,16 @@
   }
 }
 
-
-
-  
-  @media (max-width: 768px) {
-    .hero-container {
-      padding: 1rem 0;
-    }
-    
-    .navbar {
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      padding: 0 1rem;
-    }
-  
-    .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-right: 0;
-    }
-  
-    .journey {
-      font-size: 2.5rem;
-    }
-  
-    .simplified {
-      font-size: 2rem;
-    }
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 1rem 0;
   }
+  
+  .journey {
+    font-size: 2.5rem;
+  }
+  
+  .simplified {
+    font-size: 2rem;
+  }
+}

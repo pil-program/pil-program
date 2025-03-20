@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 
 const Hero = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="hero-container">
       <nav className="navbar">
         <div className="logo">PILPROGRAM</div>
-        <div className="nav-links">
+        
+        {/* Hamburger Menu Icon */}
+        <div className="menu-icon" onClick={() => setMenuOpen(true)}>
+          ☰
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <div className="nav-links desktop">
           <a href="/">Home</a>
           <a href="#about">About</a>
           <a href="#products">Products</a>
@@ -14,14 +23,21 @@ const Hero = () => {
         </div>
       </nav>
 
+      {/* Mobile Overlay Menu */}
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <div className="close-icon" onClick={() => setMenuOpen(false)}>
+          ✕
+        </div>
+        <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
+        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="#products" onClick={() => setMenuOpen(false)}>Products</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact Us</a>
+      </div>
+
       <div className="content">
-  {/* H1 with typewriter animation #1 */}
-  <h1 className="journey typewriter-1">JOURNEY</h1>
-
-  {/* H2 with typewriter animation #2 (delayed) */}
-  <h2 className="simplified typewriter-2">SIMPLIFIED</h2>
-</div>
-
+        <h1 className="journey typewriter-1">JOURNEY</h1>
+        <h2 className="simplified typewriter-2">SIMPLIFIED</h2>
+      </div>
     </div>
   );
 };
