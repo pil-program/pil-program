@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <nav className="navbar">
-        <div className="logo">PIL PROGRAM</div>
+        <div className="logo">PILPROGRAM</div>
         <div className="nav-links">
           <a href="/">Home</a>
           <a href="#about">About</a>

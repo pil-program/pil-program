@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-top">
           <div className="logo">
-            <h2>PIL PROGRAM</h2>
+            <h2>PILPROGRAM</h2>
           </div>
           <nav className="navigation">
             <ul>
