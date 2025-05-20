@@ -1,8 +1,7 @@
-
-import { useState } from "react"
-import emailjs from "@emailjs/browser"
-import "./contact-form.css"
-import { MapPin, Mail, Phone, Twitter, Instagram, Disc, Facebook, Linkedin } from "lucide-react"
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import "./contact-form.css";
+import { MapPin, Mail, Phone, Twitter, Instagram, Disc, Facebook, Linkedin } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,41 +11,45 @@ const ContactForm = () => {
     phoneNumber: "",
     subject: "General Inquiry",
     message: "",
-  })
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const emailParams = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phoneNumber: formData.phoneNumber,
-      subject: formData.subject,
-      message: formData.message,
+    const { firstName, lastName, email, message } = formData;
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      !message.trim()
+    ) {
+      alert("Please fill in all required fields before sending.");
+      return;
     }
+
+    const emailParams = { ...formData };
 
     emailjs
       .send(
-        "service_q5xqzok", 
-        "template_3u0gm7c", 
+        "service_q5xqzok", // your EmailJS service ID
+        "template_3u0gm7c", // your EmailJS template ID
         emailParams,
-        "n5ReM--13eVLZqjMK" // Replace with your EmailJS Public Key
+        "n5ReM--13eVLZqjMK" // your EmailJS public key
       )
       .then((response) => {
-        console.log("SUCCESS!", response.status, response.text)
-        alert("Message Sent Successfully!")
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Message Sent Successfully!");
       })
       .catch((error) => {
-        console.error("FAILED...", error)
-        alert("Message Sending Failed.")
-      })
-  }
+        console.error("FAILED...", error);
+        alert("Message Sending Failed.");
+      });
+  };
 
   return (
     <div id="contact" className="contact-container">
@@ -59,11 +62,9 @@ const ContactForm = () => {
         <div className="contact-info">
           <div className="info-content">
             <h2>Contact Information</h2>
-            <p className="chat-text">Lets get connected😊</p>
+            <p className="chat-text">Lets get connected</p>
 
             <div className="contact-details">
-
-
               <div className="contact-item">
                 <Mail className="icon" size={24} />
                 <span>pilprogramcorp@gmail.com</span>
@@ -101,6 +102,7 @@ const ContactForm = () => {
                   placeholder="Ian"
                   value={formData.firstName}
                   onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -113,6 +115,7 @@ const ContactForm = () => {
                   placeholder="Doe"
                   value={formData.lastName}
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -120,7 +123,15 @@ const ContactForm = () => {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="iandoe@gmail.com" />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="iandoe@gmail.com"
+                  required
+                />
               </div>
 
               <div className="form-group">
@@ -139,21 +150,19 @@ const ContactForm = () => {
             <div className="form-group subject-group">
               <label>Select Subject?</label>
               <div className="radio-options">
-                {["General Inquiry", "Careers", "Collaborate"].map(
-                  (option, index) => (
-                    <div className="radio-option" key={index}>
-                      <input
-                        type="radio"
-                        id={`subject-${index}`}
-                        name="subject"
-                        value={option}
-                        checked={formData.subject === option}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor={`subject-${index}`}>{option.replace(/\s\d$/, "")}</label>
-                    </div>
-                  ),
-                )}
+                {["General Inquiry", "Careers", "Collaborate"].map((option, index) => (
+                  <div className="radio-option" key={index}>
+                    <input
+                      type="radio"
+                      id={`subject-${index}`}
+                      name="subject"
+                      value={option}
+                      checked={formData.subject === option}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor={`subject-${index}`}>{option}</label>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -165,6 +174,7 @@ const ContactForm = () => {
                 placeholder="Write your message.."
                 value={formData.message}
                 onChange={handleChange}
+                required
               ></textarea>
             </div>
 
@@ -175,7 +185,7 @@ const ContactForm = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

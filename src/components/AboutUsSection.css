@@ -200,15 +200,24 @@
 }
 
 /* Un-skew the text so it’s not slanted */
-.learn-more-button span {
+.learn-more-button a {
   display: inline-block;
   transform: skewX(15deg);  /* Opposite of the parent */
   transform-origin: center left;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Urbanist', sans-serif;
 }
 
 /* Hover state */
 .learn-more-button:hover {
-  background-color: #3a5742;
+  background-color: #fff;
+  border-color: #0C2852;
+  border: 1px solid #0C2852; /* Darker shade of green */
+  
+}
+.learn-more-button:hover a {
+  color: #0C2852;
 }
 
 @media (max-width: 768px) {

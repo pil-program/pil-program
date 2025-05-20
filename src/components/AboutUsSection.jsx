@@ -69,7 +69,7 @@ export default function AboutUsSection() {
           new.
         </p>
         <button className="learn-more-button">
-            <span>Learn More</span>
+            <a href='#products'>Learn More</a>
         </button>
 
       </div>

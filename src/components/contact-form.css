@@ -241,13 +241,17 @@
     padding: 12px 30px;
     font-size: 16px;
     border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
     float: right;
+    font-family: 'urbanist', sans-serif;
   }
   
   .submit-button:hover {
-    background-color: #3d5445;
+    background-color: #fff;
+    color: #0C2852;
+    border: 1px solid #0C2852;
   }
   
   /* Responsive styles */
