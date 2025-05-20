@@ -7,8 +7,9 @@ function App() {
   return (
     <div className="App">
       <Hero />
-      <Products />
       <AboutUsSection />
+      <Products />
+      
       <ContactForm />
       <Footer />
     </div>
