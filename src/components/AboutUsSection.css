@@ -212,6 +212,9 @@
 }
 
 @media (max-width: 768px) {
+  .aboutus-header {
+    display: none;
+  }
   .about-us-container {
     display: flex;
     flex-direction: column;
