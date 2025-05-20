@@ -65,16 +65,18 @@
 }
 
 .divider {
-  height: 8px;
+  height: 3px;
   width: 96px;
-  background-color: #eee;
-  margin-bottom: 16px;
+  background-color: #0C2852;
+  margin-bottom: 8px;
+  border-radius: 10px;
 }
 .divider2 {
-  height: 8px;
+  height: 3px;
   width: 120px;
-  background-color: #eee;
+  background-color: #0C2852;
   margin-bottom: 16px;
+   border-radius: 10px;
 }
 
 .emoji-container {
@@ -99,6 +101,14 @@
   text-align: left;
 }
 
+.stats-section a {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0C2852;
+  text-decoration: none;  
+}
+
 .stats-header {
   display: flex;
   align-items: center;
@@ -113,14 +123,14 @@
   font-size: 26px;
   font-family: 'poppins', sans-serif;
   font-weight: bold;
-  color: #49614f;
+  color: #0C2852;
   margin: 0;
 }
 
 .arrow-icon {
   height: 24px;
   width: 24px;
-  color: #4ade80;
+
 }
 
 .stats-description {
@@ -142,11 +152,11 @@
   text-transform: uppercase;
   letter-spacing: 6px;
   margin-bottom: 0px;
-  color: #49614F;
+  color: #0C2852;
 }
 
 .main-title {
-  font-family: 'Special Elite', serif;
+  font-family: 'Cormorant', serif;
   font-size: 52px;
   font-weight: 600;
   text-align: left;
@@ -165,7 +175,7 @@
 
 .learn-more-button {
   width: 200px;              /* Fixed width for the button */
-  background-color: #4a6852;    /* Green-ish color */
+  background-color: #0C2852;    /* Green-ish color */
   color: #fff;                  /* White text */
   border: none;
   cursor: pointer;
@@ -240,6 +250,7 @@
     text-align: center;
     max-width: 90%;
   }
+
 
   .aboutus-columns {
     align-items: left;

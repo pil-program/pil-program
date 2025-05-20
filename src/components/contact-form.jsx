@@ -1,4 +1,3 @@
-"use client"
 
 import { useState } from "react"
 import emailjs from "@emailjs/browser"
@@ -34,8 +33,8 @@ const ContactForm = () => {
 
     emailjs
       .send(
-        "service_q5xqzok", // Replace with your EmailJS Service ID
-        "template_3u0gm7c", // Replace with your EmailJS Template ID
+        "service_q5xqzok", 
+        "template_3u0gm7c", 
         emailParams,
         "n5ReM--13eVLZqjMK" // Replace with your EmailJS Public Key
       )

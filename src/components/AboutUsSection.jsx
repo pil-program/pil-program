@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUsSection.css';
-import coupleImage from '../assets/couple.png';
-import houseImage from '../assets/house.png';
+import coupleImage from '../assets/couple_2.png';
+import houseImage from '../assets/house_3.png';
 
 export default function AboutUsSection() {
   return (
@@ -15,17 +15,22 @@ export default function AboutUsSection() {
             className="section-image"
           />
         </div>
-        <div className="customers-section">
-          <h3 className="customers-title">Happy Customers</h3>
-          <div className="divider"></div>
-          {/* <div className="divider2"></div> */}
-          <div className="emoji-container">
-            <span className="emoji">😍</span>
-            <span className="emoji">😊</span>
-            <span className="emoji">😀</span>
-            <span className="emoji">😄</span>
-            <span className="emoji-large">😁</span>
+       <div className="stats-section">
+          <div className="stats-header">
+            <h2 className="stats-number">100+</h2>
+            
           </div>
+          <p className="stats-description">
+            Happy customers
+            
+            in the last month.
+            <br/>
+            <a  href="#contact" className="highlight">
+                  Get in touch !
+                </a>
+            
+          </p>
+          
         </div>
       </div>
 
@@ -33,8 +38,8 @@ export default function AboutUsSection() {
       <div className="stats-column">
         <div className="stats-section">
           <div className="stats-header">
-            <h2 className="stats-number">30,000+</h2>
-            <svg
+            <h2 className="stats-number">15,000+</h2>
+            {/* <svg
               className="arrow-icon"
               width="24"
               height="24"
@@ -44,17 +49,17 @@ export default function AboutUsSection() {
             >
               <path
                 d="M7 17L17 7M17 7H7M17 7V17"
-                stroke="#4ADE80"
+                stroke="#0C2852"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
+            </svg> */}
           </div>
           <p className="stats-description">
-            Sales in July 2021 with 5 star ratings
+           Hours of everyday stress saved 
             <br />
-            and happy clients.
+            for our early adopters.
           </p>
         </div>
         <div className="image-container">

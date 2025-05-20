@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import backgroundVideo from '../assets/background.mp4';
 import './Hero.css';
 
 const Hero = () => {
@@ -6,6 +7,14 @@ const Hero = () => {
 
   return (
     <div className="hero-container">
+        <video
+        className="bg-video"
+        src={backgroundVideo}
+        autoPlay      // start immediately
+        loop          // repeat forever
+        muted         // autoplay policy compliance
+        playsInline   // mobile Safari compliance
+      />
       <nav className="navbar">
         <div className="logo">PILPROGRAM</div>
         
